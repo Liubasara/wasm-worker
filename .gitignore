@@ -139,8 +139,8 @@ dist-ssr
 .pnp.*
 
 # Lock
-package-lock.json
-pnpm-lock.yaml
+# package-lock.json
+# pnpm-lock.yaml
 # yarn.lock
 
 

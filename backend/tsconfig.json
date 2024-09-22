@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "allowJs": true,
+    "moduleResolution": "Node",
+    "module": "commonjs",
+    "target": "ESNext",
+    "outDir": "./dist",
+    "lib": ["ESNext", "DOM"],
+    "removeComments": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "typeRoots": ["node_modules/@types", "./typings"],
+    "baseUrl": ".",
+    "rootDir": "../",
+    "paths": {
+      "@server/*": ["./*"]
+    }
+  },
+  "compileOnSave": false,
+  "include": ["./**/*.ts", "./**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
+}
