@@ -6,6 +6,10 @@ window.addEventListener('load', () => {
   let worker: Worker | null = null
   if (startBtn) {
     startBtn.addEventListener('click', () => {
+      if (worker) {
+        worker.terminate()
+        worker = null
+      }
       worker = createWroker()
     })
   }

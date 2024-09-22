@@ -1,0 +1,9 @@
+{
+  "watch": ["assembly/**/*.ts"],
+  "ext": "ts",
+  "ignore": ["assembly/**/*.spec.ts", "node_modules"],
+  "exec": "pnpm asbuild",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

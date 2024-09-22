@@ -3,13 +3,18 @@ async function fetchAndStartWasm() {
     method: 'GET'
   })
   const bytes = await res.arrayBuffer()
-  const results = await WebAssembly.instantiate(bytes, {
-    console: {
+  const transObj = {
+    index: {
       log: console.log
     }
-  })
+  }
+  const results = await WebAssembly.instantiate(bytes, transObj)
   const { exports } = results.instance
   console.log('exports', exports)
+  console.log(
+    'addResult',
+    (exports as { add: (a: number, b: number) => number })?.add?.(1, 3)
+  )
 }
 
 export const createWroker = () => {
