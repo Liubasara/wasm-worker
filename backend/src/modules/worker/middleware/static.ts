@@ -14,5 +14,9 @@ export const useStaticMiddleWare: UseMiddleWareFnType = (server) => {
       })
     )
   )
+  server.use(koaMount('/worker', koaStatic(path.resolve(constants.ROOT_PATH, 'worker', 'dist'), {
+    // 若为 true，将在中间件的 next 后调用
+    defer: false
+  })))
   return server
 }

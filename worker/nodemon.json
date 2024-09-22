@@ -1,0 +1,9 @@
+{
+  "watch": ["src/**/*.ts"],
+  "ext": "ts",
+  "ignore": ["src/**/*.spec.ts", "node_modules"],
+  "exec": "pnpm build",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

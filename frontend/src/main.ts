@@ -1,16 +1,16 @@
-import { createWroker } from './createWorker'
+import { createWorker } from './createWorker'
 
 window.addEventListener('load', () => {
   const startBtn = document.getElementById('start')
   const stopBtn = document.getElementById('stop')
   let worker: Worker | null = null
   if (startBtn) {
-    startBtn.addEventListener('click', () => {
+    startBtn.addEventListener('click', async () => {
       if (worker) {
         worker.terminate()
         worker = null
       }
-      worker = createWroker()
+      worker = await createWorker()
     })
   }
   if (stopBtn) {
