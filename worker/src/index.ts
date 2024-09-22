@@ -10,7 +10,7 @@ async function fetchAndStartWasm() {
   console.log('exports', exports)
   console.log(
     'getReturn:',
-    (exports as { getReturn: () => unknown })?.getReturn?.()
+    (exports as { getFoo: () => unknown })?.getFoo?.()
   )
 }
 
