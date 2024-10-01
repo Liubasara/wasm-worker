@@ -1,11 +1,7 @@
 import { getCurrentConstants } from '@server/src/configs/envs'
 import type Koa from 'koa'
 
-const ALLOW_HEADERS = [
-  'Accept',
-  'Content-Type',
-  'Authorization'
-]
+const ALLOW_HEADERS = ['Accept', 'Content-Type', 'Authorization']
 const ALLOW_METHODS = ['POST', 'GET', 'PUT', 'PATCH', 'OPTIONS', 'DELETE']
 const MAX_AGE = 3600
 
@@ -20,8 +16,12 @@ export const useCorsMiddleWare: (server: Koa) => Koa = (server) => {
       !allowOrigins &&
         ALLOW_CORS.forEach((domain) => {
           if (domain.includes('*') && origin.includes(domain.slice(1))) {
-            // 通配符
-            allowOrigins = domain
+            // *.xxx.com 通配符
+            allowOrigins = origin
+          }
+          if (domain === '*') {
+            // * 通配符
+            allowOrigins = origin
           }
         })
     }
